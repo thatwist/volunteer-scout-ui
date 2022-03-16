@@ -1,14 +1,18 @@
 {
-  "name": "react-instantsearch-e-commerce",
+  "name": "volunteer-scout-ui",
   "version": "6.12.1",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "typesenseServer": "docker run -i -p 8108:8108 -v/tmp/typesense-server-data/:/data typesense/typesense:0.23.0.rc46 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors",
+    "populateTypesenseIndex": "node scripts/populateTypesenseIndex.js",
+    "typesenseServerTest": "node scripts/startTypesenseServer.js"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "algoliasearch": "4.12.1",
     "classnames": "^2.3.1",
     "qs": "6.8.0",
@@ -16,7 +20,8 @@
     "react-compound-slider": "^3.3.1",
     "react-dom": "16.8.6",
     "react-instantsearch-dom": "6.12.0",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "typesense-instantsearch-adapter": "^1.2.2"
   },
   "devDependencies": {
     "eslint-config-algolia": "13.3.0",
@@ -24,7 +29,8 @@
     "eslint-plugin-import": "2.17.3",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.12.4",
-    "prettier": "1.19.1"
+    "prettier": "1.19.1",
+    "typesense": "^0.13.0"
   },
   "browserslist": {
     "production": [

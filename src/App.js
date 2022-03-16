@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import {
   InstantSearch,
-  HierarchicalMenu,
+  /* HierarchicalMenu, */
   RefinementList,
   SortBy,
   Pagination,
@@ -11,17 +11,17 @@ import {
   Hits,
   HitsPerPage,
   Panel,
-  Configure,
+  /* Configure, */
   SearchBox,
   Snippet,
-  ToggleRefinement,
+  /* ToggleRefinement, */
 } from 'react-instantsearch-dom';
-import algoliasearch from 'algoliasearch/lite';
+/* import algoliasearch from 'algoliasearch/lite'; */
 import {
   ClearFiltersMobile,
-  PriceSlider,
+  /* PriceSlider, */
   NoResults,
-  Ratings,
+  /* Ratings, */
   ResultsNumberMobile,
   SaveFiltersMobile,
 } from './widgets';
@@ -33,21 +33,47 @@ import './App.mobile.css';
 import './widgets/Pagination.css';
 import AlgoliaSvg from './AlgoliaSvg';
 
-const searchClient = algoliasearch(
-  'latency',
-  '6be0576ff61c053d5f9a3225e2a90f76'
-);
+import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
+
+const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
+  server: {
+    apiKey: process.env.REACT_APP_TYPESENSE_SEARCH_ONLY_API_KEY,
+    nodes: [
+      {
+        host: process.env.REACT_APP_TYPESENSE_HOST,
+        port: process.env.REACT_APP_TYPESENSE_PORT,
+        protocol: process.env.REACT_APP_TYPESENSE_PROTOCOL,
+      },
+    ],
+    cacheSearchResultsForSeconds: 2 * 60, // Cache search results from server. Defaults to 2 minutes. Set to 0 to disable caching.
+  },
+  // The following parameters are directly passed to Typesense's search API endpoint.
+  //  So you can pass any parameters supported by the search endpoint below.
+  //  query_by is required.
+  additionalSearchParameters: {
+    // eslint-disable-next-line camelcase
+    queryBy: 'title,description,category',
+    queryByWeights: '4,2,1', // numTypos: '3,3,3',
+    typoTokensThreshold: 1,
+  },
+});
+const searchClient = typesenseInstantsearchAdapter.searchClient;
+
+// const searchClient = algoliasearch(
+//   'latency',
+//   '6be0576ff61c053d5f9a3225e2a90f76'
+// );
 
 const Hit = ({ hit }) => (
   <article className="hit">
     <header className="hit-image-container">
-      <img src={hit.image} alt={hit.name} className="hit-image" />
+      <img src={hit.image} alt={hit.title} className="hit-image" />
     </header>
 
     <div className="hit-info-container">
-      <p className="hit-category">{hit.categories[0]}</p>
+      <p className="hit-category">{hit.category}</p>
       <h1>
-        <Highlight attribute="name" tagName="mark" hit={hit} />
+        <Highlight attribute="title" tagName="mark" hit={hit} />
       </h1>
       <p className="hit-description">
         <Snippet attribute="description" tagName="mark" hit={hit} />
@@ -56,7 +82,7 @@ const Hit = ({ hit }) => (
       <footer>
         <p>
           <span className="hit-em">$</span>{' '}
-          <strong>{formatNumber(hit.price)}</strong>{' '}
+          <strong>{formatNumber(hit.views)}</strong>{' '}
           <span className="hit-em hit-rating">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +141,7 @@ const App = props => {
   return (
     <InstantSearch
       searchClient={searchClient}
-      indexName="instant_search"
+      indexName="posts"
       searchState={props.searchState}
       createURL={props.createURL}
       onSearchStateChange={props.onSearchStateChange}
@@ -125,7 +151,7 @@ const App = props => {
           <AlgoliaSvg />
         </p>
 
-        <p className="header-title">Stop looking for an item — find it.</p>
+        <p className="header-title">Пошуковик волонтера</p>
 
         <SearchBox
           translations={{
@@ -155,11 +181,11 @@ const App = props => {
         />
       </header>
 
-      <Configure
-        attributesToSnippet={['description:10']}
-        snippetEllipsisText="…"
-        removeWordsIfNoResults="allOptional"
-      />
+      {/* <Configure
+          attributesToSnippet={['description:10']}
+          snippetEllipsisText="…"
+          removeWordsIfNoResults="allOptional"
+          /> */}
 
       <main className="container" ref={containerRef}>
         <div className="container-wrapper">
@@ -203,40 +229,43 @@ const App = props => {
             </div>
 
             <div className="container-body">
-              <Panel header="Category">
-                <HierarchicalMenu
+              {/* <Panel header="Category">
+                  <HierarchicalMenu
                   attributes={[
-                    'hierarchicalCategories.lvl0',
-                    'hierarchicalCategories.lvl1',
+                  'hierarchicalCategories.lvl0',
+                  'hierarchicalCategories.lvl1',
                   ]}
-                />
+                  />
+                  </Panel>
+                */}
+              <Panel header="Category">
+                <RefinementList attribute="category" />
               </Panel>
-
-              <Panel header="Brands">
+              <Panel header="Channels">
                 <RefinementList
-                  attribute="brand"
+                  attribute="channel"
                   searchable={true}
                   translations={{
-                    placeholder: 'Search for brands…',
+                    placeholder: 'Search for channels…',
                   }}
                 />
               </Panel>
 
-              <Panel header="Price">
-                <PriceSlider attribute="price" />
-              </Panel>
+              {/* <Panel header="Price">
+                  <PriceSlider attribute="price" />
+                  </Panel> */}
 
-              <Panel header="Free shipping">
-                <ToggleRefinement
+              {/* <Panel header="Rebooks">
+                  <ToggleRefinement
                   attribute="free_shipping"
                   label="Display only items with free shipping"
                   value={true}
-                />
-              </Panel>
+                  />
+                  </Panel> */}
 
-              <Panel header="Ratings">
-                <Ratings attribute="rating" />
-              </Panel>
+              {/* <Panel header="Views">
+                  <Ratings attribute="views" />
+                  </Panel> */}
             </div>
           </section>
 
@@ -255,19 +284,19 @@ const App = props => {
           <header className="container-header container-options">
             <SortBy
               className="container-option"
-              defaultRefinement="instant_search"
+              defaultRefinement="posts"
               items={[
                 {
                   label: 'Sort by featured',
-                  value: 'instant_search',
+                  value: 'posts',
                 },
                 {
-                  label: 'Price ascending',
-                  value: 'instant_search_price_asc',
+                  label: 'Date ascending',
+                  value: 'posts_ts_asc',
                 },
                 {
-                  label: 'Price descending',
-                  value: 'instant_search_price_desc',
+                  label: 'Date descending',
+                  value: 'posts_ts_desc',
                 },
               ]}
             />
@@ -351,7 +380,7 @@ const App = props => {
           data-action="open-overlay"
           onClick={openFilters}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 14">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
             <path
               d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
               stroke="#fff"

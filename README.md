@@ -12,14 +12,25 @@ Based on algolia react-instantsearch e-commerce demo
 
 ## How to run
 
+You may use both `npm` or `yarn`
+
+First of all, edit `.env` file
+
+To run local typesense:
+
+```sh
+yarn typesenseServer
 ```
+
+To populate sample index:
+
+```sh
+yarn populateTypesenseIndex
+```
+
+To start:
+
+```sh
 yarn
 yarn start
-```
-
-Alternatively, you may use npm:
-
-```
-npm install
-npm start
 ```
