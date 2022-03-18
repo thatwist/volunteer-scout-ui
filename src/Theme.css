@@ -67,26 +67,8 @@ a[class^='ais-'] {
 
 .ais-Hits-list {
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 10px;
   grid-template-columns: 1fr;
-}
-
-@media (min-width: 680px) {
-  .ais-Hits-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 900px) {
-  .ais-Hits-list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  .ais-Hits-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
 /* Menus */
