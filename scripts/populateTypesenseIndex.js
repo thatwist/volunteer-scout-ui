@@ -24,7 +24,7 @@ module.exports = (async () => {
     fields: [
       { name: 'title', type: 'string', locale: 'ru' },
       { name: 'date', type: 'string' },
-      { name: 'date_bucket', type: 'string', facet: true },
+      { name: 'date_bucket', type: 'int32', facet: true },
       { name: 'ts', type: 'float' },
       { name: 'category', type: 'string', facet: true, locale: 'ru' },
       { name: 'channel', type: 'string', facet: true },
