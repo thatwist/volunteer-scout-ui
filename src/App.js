@@ -24,6 +24,7 @@ import {
   /* Ratings, */
   ResultsNumberMobile,
   SaveFiltersMobile,
+  Dates,
 } from './widgets';
 import withURLSync from './URLSync';
 import { formatNumber } from './utils';
@@ -236,6 +237,9 @@ const App = props => {
             </div>
 
             <div className="container-body">
+              <Panel header="Date">
+                <Dates />
+              </Panel>
               {/* <Panel header="Category">
                   <HierarchicalMenu
                   attributes={[

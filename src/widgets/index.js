@@ -4,3 +4,4 @@ export { default as Ratings } from './Ratings';
 export { default as ResultsNumberMobile } from './ResultsNumberMobile';
 export { default as PriceSlider } from './PriceSlider';
 export { default as SaveFiltersMobile } from './SaveFiltersMobile';
+export { default as Dates } from './Dates';
