@@ -22,16 +22,17 @@ module.exports = (async () => {
   const schema = {
     name: 'posts',
     fields: [
-      { name: 'title', type: 'string', locale: 'ua' },
+      { name: 'title', type: 'string', locale: 'ru' },
       { name: 'date', type: 'string' },
+      { name: 'date_bucket', type: 'string', facet: true },
       { name: 'ts', type: 'float' },
-      { name: 'category', type: 'string', facet: true, locale: 'ua' },
+      { name: 'category', type: 'string', facet: true, locale: 'ru' },
       { name: 'channel', type: 'string', facet: true },
       { name: 'platform', type: 'string', facet: true },
       { name: 'post_id', type: 'int32' },
       { name: 'views', type: 'int32', "optional": true },
-      { name: 'description', type: 'string', locale: 'ua' },
-      { name: 'message', type: 'string', facet: true, locale: 'ua' }
+      { name: 'description', type: 'string', locale: 'ru' },
+      { name: 'message', type: 'string', locale: 'ru' }
 
       // Only fields that need to be searched / filtered by need to be specified in the collection's schema
       // The documents you index can still contain other additional fields.
