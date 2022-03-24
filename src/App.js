@@ -4,12 +4,12 @@ import {
   InstantSearch,
   /* HierarchicalMenu, */
   RefinementList,
-  SortBy,
+  // SortBy,
   Pagination,
   ClearRefinements,
   Highlight,
   Hits,
-  HitsPerPage,
+  // HitsPerPage,
   Panel,
   /* Configure, */
   SearchBox,
@@ -27,12 +27,11 @@ import {
   Dates,
 } from './widgets';
 import withURLSync from './URLSync';
-import { formatNumber } from './utils';
+// import { formatNumber } from './utils';
 import './Theme.css';
 import './App.css';
 import './App.mobile.css';
 import './widgets/Pagination.css';
-import AlgoliaSvg from './AlgoliaSvg';
 
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 
@@ -83,12 +82,12 @@ const Hit = ({ hit }) => (
       <footer>
         <p>
           {/* <span className="hit-em">$</span>{' '}*/}
-          {hit.views && (
-            <>
-              {'Views:'}{' '}
-              {hit.views && <strong>{formatNumber(hit.views)}</strong>}{' '}
-            </>
-          )}
+          {/* {hit.views && (*/}
+          {/*  <>*/}
+          {/*    {'Views:'}{' '}*/}
+          {/*    {hit.views && <strong>{formatNumber(hit.views)}</strong>}{' '}*/}
+          {/*  </>*/}
+          {/* )}*/}
           {hit.rating && (
             <span className="hit-em hit-rating">
               <svg
@@ -155,15 +154,15 @@ const App = props => {
       onSearchStateChange={props.onSearchStateChange}
     >
       <header className="header" ref={headerRef}>
-        <p className="header-logo">
-          <AlgoliaSvg />
-        </p>
+        <p className="header-logo"></p>
 
-        <p className="header-title">Пошуковик волонтера</p>
+        <p className="header-title">
+          Знаходимо речі, людей, допомогу у десятках telegram каналів
+        </p>
 
         <SearchBox
           translations={{
-            placeholder: 'Product, brand, color, …',
+            placeholder: 'наприклад, "спальники"',
           }}
           submit={
             <svg
@@ -249,9 +248,9 @@ const App = props => {
                   />
                   </Panel>
                 */}
-              <Panel header="Category">
-                <RefinementList attribute="category" />
-              </Panel>
+              {/* <Panel header="Category">*/}
+              {/*  <RefinementList attribute="category" />*/}
+              {/* </Panel>*/}
               <Panel header="Channels">
                 <RefinementList
                   attribute="channel"
@@ -293,43 +292,43 @@ const App = props => {
 
         <section className="container-results">
           <header className="container-header container-options">
-            <SortBy
-              className="container-option"
-              defaultRefinement="posts"
-              items={[
-                {
-                  label: 'Sort by featured',
-                  value: 'posts',
-                },
-                {
-                  label: 'Date ascending',
-                  value: 'posts_ts_asc',
-                },
-                {
-                  label: 'Date descending',
-                  value: 'posts_ts_desc',
-                },
-              ]}
-            />
+            {/* <SortBy*/}
+            {/*  className="container-option"*/}
+            {/*  defaultRefinement="posts"*/}
+            {/*  items={[*/}
+            {/*    {*/}
+            {/*      label: 'Sort by featured',*/}
+            {/*      value: 'posts',*/}
+            {/*    },*/}
+            {/*    {*/}
+            {/*      label: 'Date ascending',*/}
+            {/*      value: 'posts_ts_asc',*/}
+            {/*    },*/}
+            {/*    {*/}
+            {/*      label: 'Date descending',*/}
+            {/*      value: 'posts_ts_desc',*/}
+            {/*    },*/}
+            {/*  ]}*/}
+            {/* />*/}
 
-            <HitsPerPage
-              className="container-option"
-              items={[
-                {
-                  label: '16 hits per page',
-                  value: 16,
-                },
-                {
-                  label: '32 hits per page',
-                  value: 32,
-                },
-                {
-                  label: '64 hits per page',
-                  value: 64,
-                },
-              ]}
-              defaultRefinement={16}
-            />
+            {/* <HitsPerPage*/}
+            {/*  className="container-option"*/}
+            {/*  items={[*/}
+            {/*    {*/}
+            {/*      label: '16 hits per page',*/}
+            {/*      value: 16,*/}
+            {/*    },*/}
+            {/*    {*/}
+            {/*      label: '32 hits per page',*/}
+            {/*      value: 32,*/}
+            {/*    },*/}
+            {/*    {*/}
+            {/*      label: '64 hits per page',*/}
+            {/*      value: 64,*/}
+            {/*    },*/}
+            {/*  ]}*/}
+            {/*  defaultRefinement={16}*/}
+            {/* />*/}
           </header>
 
           <Hits hitComponent={Hit} />

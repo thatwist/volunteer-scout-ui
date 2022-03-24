@@ -27,12 +27,7 @@ h2 {
 
 .header {
   align-items: center;
-  background: linear-gradient(to bottom, #fbc300, #c98a00);
-  background-image: url('./assets/cover.png');
-  background-image: url('./assets/cover.png'),
-    linear-gradient(to bottom, #fbc300, #c98a00);
-  background-position: center;
-  background-size: cover;
+  background: #E3B23C;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -54,6 +49,7 @@ h2 {
 .header-title {
   font-size: 38px;
   font-weight: 300;
+  text-align: left;
 }
 
 /* Containers */
@@ -138,9 +134,12 @@ mark {
 
 /* Search box */
 
+.header .ais-SearchBox, .header-title {
+  width: 740px;
+}
+
 .header .ais-SearchBox {
   height: 64px;
-  width: 740px;
 }
 
 .header .ais-SearchBox .ais-SearchBox-input {
