@@ -266,7 +266,6 @@ a[class^='ais-'] {
   width: 1rem;
 }
 
-
 .ais-RefinementList-item--selected, .ais-NumericMenu-item--selected {
   font-weight: bold;
 }

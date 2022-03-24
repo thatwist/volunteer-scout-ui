@@ -238,11 +238,6 @@
     display: flex;
   }
 
-  .hit-image-container {
-    flex: 1;
-    margin-right: 2rem;
-  }
-
   .hit-info-container {
     flex: 2;
   }

@@ -6,6 +6,6 @@ export default () => (
   <NumericMenu
     attribute="date_bucket"
     items={DATE_RANGES}
-    defaultRefinement=":25"
+    // defaultRefinement=":25"
   />
 );

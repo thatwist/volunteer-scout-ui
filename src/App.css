@@ -134,11 +134,12 @@ mark {
 
 /* Search box */
 
-.header .ais-SearchBox, .header-title {
-  width: 740px;
+.header-title {
+  max-width: 740px;
 }
 
 .header .ais-SearchBox {
+  width: 740px;
   height: 64px;
 }
 
@@ -208,6 +209,24 @@ mark {
   text-transform: uppercase;
 }
 
+.hit-header {
+  color: darkgray;
+  margin-bottom: 4px;
+}
+
+.hit-date {
+  margin-right: 10px;
+}
+
+.hit-external-link {
+  padding: 0 3px;
+  border-radius: 3px;
+  color: grey;
+  text-decoration: none;
+  border: 1px solid grey;
+  background-color: #efefef;
+}
+
 .hit-description {
   margin-top: 2px;
 }
@@ -215,15 +234,6 @@ mark {
 .hit-info-container {
   overflow-wrap: break-word;
   word-break: break-word;
-}
-
-.hit-image-container {
-  align-items: center;
-  display: flex;
-  height: 174px;
-  justify-content: center;
-  margin: auto;
-  width: 174px;
 }
 
 .hit-image {

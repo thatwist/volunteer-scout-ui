@@ -7,7 +7,7 @@ import {
   // SortBy,
   Pagination,
   ClearRefinements,
-  Highlight,
+  // Highlight,
   Hits,
   // HitsPerPage,
   Panel,
@@ -28,6 +28,7 @@ import {
 } from './widgets';
 import withURLSync from './URLSync';
 // import { formatNumber } from './utils';
+import { formatDate } from './utils';
 import './Theme.css';
 import './App.css';
 import './App.mobile.css';
@@ -66,15 +67,25 @@ const searchClient = typesenseInstantsearchAdapter.searchClient;
 
 const Hit = ({ hit }) => (
   <article className="hit">
-    {/* <header className="hit-image-container">*/}
-    {/*  <img src={hit.image} alt={hit.title} className="hit-image" />*/}
-    {/* </header>*/}
+    <header className="hit-header">
+      {/* <img src={hit.image} alt={hit.title} className="hit-image" />*/}
+      <span className="hit-date">{formatDate(hit.ts)}</span>
+      <a
+        className="hit-external-link"
+        href={hit.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ↗ Переглянути у telegram
+      </a>
+    </header>
 
     <div className="hit-info-container">
-      <p className="hit-category">{hit.category}</p>
-      <h1>
-        <Highlight attribute="title" tagName="mark" hit={hit} />
-      </h1>
+      {/* <p className="hit-category">{hit.category}</p>*/}
+      {/* {JSON.stringify(hit)}*/}
+      {/* <h1>*/}
+      {/*  <Highlight attribute="title" tagName="mark" hit={hit} />*/}
+      {/* </h1>*/}
       <p className="hit-description">
         <Snippet attribute="description" tagName="mark" hit={hit} />
       </p>
@@ -201,7 +212,7 @@ const App = props => {
             onKeyUp={event => onKeyUp(event)}
           >
             <div className="container-header">
-              <h2>Filters</h2>
+              <h2>Фільтри</h2>
 
               <div className="clear-filters" data-layout="desktop">
                 <ClearRefinements
@@ -223,7 +234,7 @@ const App = props => {
                             />
                           </g>
                         </svg>
-                        Clear filters
+                        Скасувати
                       </React.Fragment>
                     ),
                   }}
@@ -236,7 +247,7 @@ const App = props => {
             </div>
 
             <div className="container-body">
-              <Panel header="Date">
+              <Panel header="Дата">
                 <Dates />
               </Panel>
               {/* <Panel header="Category">
@@ -251,7 +262,7 @@ const App = props => {
               {/* <Panel header="Category">*/}
               {/*  <RefinementList attribute="category" />*/}
               {/* </Panel>*/}
-              <Panel header="Channels">
+              <Panel header="Канали">
                 <RefinementList
                   attribute="channel"
                   searchable={true}
