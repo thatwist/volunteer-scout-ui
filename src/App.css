@@ -56,9 +56,14 @@ h2 {
 
 .container {
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1300px;
   padding: 2rem 1rem;
+}
+
+.container-sidebar-results {
+  display: flex;
 }
 
 .container-filters {
@@ -135,7 +140,7 @@ mark {
 /* Search box */
 
 .header-title {
-  max-width: 740px;
+  width: 740px;
 }
 
 .header .ais-SearchBox {
