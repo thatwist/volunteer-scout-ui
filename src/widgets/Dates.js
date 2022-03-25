@@ -6,6 +6,9 @@ export default () => (
   <NumericMenu
     attribute="date_bucket"
     items={DATE_RANGES}
+    translations={{
+      all: 'Увесь час',
+    }}
     // defaultRefinement=":25"
   />
 );

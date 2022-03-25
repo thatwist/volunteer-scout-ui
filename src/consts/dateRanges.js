@@ -1,14 +1,14 @@
 export const DATE_RANGES = [
   {
-    label: 'Last 24h',
+    label: 'Останні 24 години',
     end: 25,
   },
   {
-    label: 'Last 3d',
+    label: 'Останні 3 дні',
     end: 72,
   },
   {
-    label: 'Past week',
+    label: 'Останній тиждень',
     end: 168,
   },
 ];

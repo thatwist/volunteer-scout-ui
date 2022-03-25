@@ -24,7 +24,7 @@ import {
   /* Ratings, */
   ResultsNumberMobile,
   SaveFiltersMobile,
-  Dates,
+  // Dates,
 } from './widgets';
 import withURLSync from './URLSync';
 // import { formatNumber } from './utils';
@@ -69,7 +69,8 @@ const Hit = ({ hit }) => (
   <article className="hit">
     <header className="hit-header">
       {/* <img src={hit.image} alt={hit.title} className="hit-image" />*/}
-      <span className="hit-date">{formatDate(hit.ts)}</span>
+      <span className="hit-channel">{hit.channel}</span>
+      <span className="hit-date">{formatDate(hit.ts * 1000)}</span>
       <a
         className="hit-external-link"
         href={hit.link}
@@ -247,9 +248,9 @@ const App = props => {
             </div>
 
             <div className="container-body">
-              <Panel header="Дата">
-                <Dates />
-              </Panel>
+              {/* <Panel header="Дата">*/}
+              {/*  <Dates />*/}
+              {/* </Panel>*/}
               {/* <Panel header="Category">
                   <HierarchicalMenu
                   attributes={[
@@ -267,7 +268,7 @@ const App = props => {
                   attribute="channel"
                   searchable={true}
                   translations={{
-                    placeholder: 'Search for channels…',
+                    placeholder: 'Пошук каналів…',
                   }}
                 />
               </Panel>

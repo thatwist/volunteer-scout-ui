@@ -218,6 +218,11 @@ mark {
   margin-right: 10px;
 }
 
+.hit-channel {
+  margin-right: 10px;
+  color: grey;
+}
+
 .hit-external-link {
   padding: 0 3px;
   border-radius: 3px;
