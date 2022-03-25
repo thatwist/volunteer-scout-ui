@@ -1,6 +1,10 @@
 @media (max-width: 899px) {
   /* Filters overlay */
 
+  .left-feedback {
+    top: 20px;
+  }
+
   .container-filters {
     background: #fff;
     border-radius: 16px;

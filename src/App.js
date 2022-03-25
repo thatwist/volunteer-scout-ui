@@ -29,7 +29,7 @@ import {
 } from './widgets';
 import withURLSync from './URLSync';
 // import { formatNumber } from './utils';
-import { formatDate } from './utils';
+import { formatDate, getPlatformTitle } from './utils';
 import './Theme.css';
 import './App.css';
 import './App.mobile.css';
@@ -78,7 +78,7 @@ const Hit = ({ hit }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        ↗ Переглянути у telegram
+        ↗ Переглянути у {getPlatformTitle(hit.platform)}
       </a>
     </header>
 
@@ -167,6 +167,9 @@ const App = props => {
       onSearchStateChange={props.onSearchStateChange}
     >
       <header className="header" ref={headerRef}>
+        <a href="#" className="left-feedback" target="_blank">
+          ↗ Залишити відгук
+        </a>
         <p className="header-logo"></p>
 
         <p className="header-title">
@@ -278,10 +281,9 @@ const App = props => {
                 {/* <Panel header="Category">*/}
                 {/*  <RefinementList attribute="category" />*/}
                 {/* </Panel>*/}
-                <Panel header="Канали">
+                <Panel header="Джерела">
                   <RefinementList
                     attribute="channel"
-                    // searchable={true}
                     translations={{
                       placeholder: 'Пошук каналів…',
                     }}

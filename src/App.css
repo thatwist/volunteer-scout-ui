@@ -52,6 +52,14 @@ h2 {
   text-align: left;
 }
 
+.left-feedback {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Containers */
 
 .container {
