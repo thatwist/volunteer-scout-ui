@@ -285,7 +285,8 @@ const App = props => {
                   <RefinementList
                     attribute="channel"
                     limit="20"
-                    showMore
+                    showMore="true"
+                    showMoreLimit="100"
                     translations={{
                       placeholder: 'Пошук каналів…',
                     }}
