@@ -237,6 +237,7 @@ mark {
 }
 
 .hit-external-link {
+  white-space: nowrap;
   padding: 0 3px;
   border-radius: 3px;
   color: grey;
@@ -364,5 +365,13 @@ mark {
 @media (min-width: 900px) {
   [data-layout='mobile'] {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-title {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: left;
   }
 }
