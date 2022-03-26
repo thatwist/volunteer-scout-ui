@@ -71,7 +71,7 @@ const Hit = ({ hit }) => (
   <article className="hit">
     <header className="hit-header">
       {/* <img src={hit.image} alt={hit.title} className="hit-image" />*/}
-      <span className="hit-channel">{hit.channel}</span>
+      <span className="hit-channel">{hit.channel_title}</span>
       <span className="hit-date">{formatDate(hit.ts * 1000)}</span>
       <a
         className="hit-external-link"
@@ -295,6 +295,7 @@ const App = props => {
                     showMoreLimit={100}
                     translations={{
                       placeholder: 'Пошук каналів…',
+                      showMore: 'Показати ще',
                     }}
                   />
                 </Panel>
