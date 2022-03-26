@@ -167,7 +167,12 @@ const App = props => {
       onSearchStateChange={props.onSearchStateChange}
     >
       <header className="header" ref={headerRef}>
-        <a href="#" className="left-feedback" target="_blank">
+        <a
+          href="https://t.me/uall_me"
+          className="left-feedback"
+          target="_blank"
+          rel="noreferrer"
+        >
           ↗ Залишити відгук
         </a>
         <p className="header-logo"></p>
