@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 /typesense-server-data
+
+# nohup
+nohup.out
+
+# yarn log
+yarn.log
