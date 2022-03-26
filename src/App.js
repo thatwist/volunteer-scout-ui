@@ -237,7 +237,7 @@ const App = props => {
               onKeyUp={event => onKeyUp(event)}
             >
               <div className="container-header">
-                <h2>Фільтри</h2>
+                <h2>Фільтрувати</h2>
 
                 <div className="clear-filters" data-layout="desktop">
                   <ClearRefinements
