@@ -290,9 +290,9 @@ const App = props => {
                 <Panel header="Джерела">
                   <RefinementList
                     attribute="channel"
-                    limit="20"
-                    showMore="true"
-                    showMoreLimit="100"
+                    limit={20}
+                    showMore={true}
+                    showMoreLimit={100}
                     translations={{
                       placeholder: 'Пошук каналів…',
                     }}
