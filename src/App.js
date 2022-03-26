@@ -54,7 +54,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   //  query_by is required.
   additionalSearchParameters: {
     // eslint-disable-next-line camelcase
-    queryBy: 'channel,channel_title,title,description,author,category',
+    queryBy: 'channel,channel_title,title,message,author,category',
     /* queryByWeights: '4,2,1', // numTypos: '3,3,3', */
     sortBy: 'ts',
     typoTokensThreshold: 1,
