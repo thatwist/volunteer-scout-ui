@@ -54,8 +54,9 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   //  query_by is required.
   additionalSearchParameters: {
     // eslint-disable-next-line camelcase
-    queryBy: 'title,description,category',
-    queryByWeights: '4,2,1', // numTypos: '3,3,3',
+    queryBy: 'channel,channel_title,title,description,author,category',
+    /* queryByWeights: '4,2,1', // numTypos: '3,3,3', */
+    sortBy: 'ts',
     typoTokensThreshold: 1,
   },
 });
