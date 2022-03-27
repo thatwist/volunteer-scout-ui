@@ -224,7 +224,8 @@ mark {
 }
 
 .hit-header {
-  color: darkgray;
+  color: #ADADAC;
+  font-size: 12px;
   margin-bottom: 4px;
 }
 
@@ -368,7 +369,6 @@ mark {
     display: none;
   }
 }
-
 @media (max-width: 900px) {
   .header-title {
     font-size: 30px;
