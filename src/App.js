@@ -71,6 +71,7 @@ const Hit = ({ hit }) => (
   <article className="hit">
     <header className="hit-header">
       {/* <img src={hit.image} alt={hit.title} className="hit-image" />*/}
+      {hit.author && <span className="hit-author">@{hit.author} пише у </span>}
       <span className="hit-channel">{hit.channel_title}</span>
       <span className="hit-date">{formatDate(hit.ts * 1000)}</span>
       <a
@@ -172,7 +173,7 @@ const App = props => {
           href="https://t.me/uall_me"
           className="left-feedback"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           ↗ Залишити відгук
         </a>
@@ -295,7 +296,9 @@ const App = props => {
                     showMoreLimit={100}
                     translations={{
                       placeholder: 'Пошук каналів…',
-                      showMore: 'Показати ще',
+                      showMore(expanded) {
+                        return expanded ? 'Згорнути ↑' : 'Показати ще ↓';
+                      },
                     }}
                   />
                 </Panel>

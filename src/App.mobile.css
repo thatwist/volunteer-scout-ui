@@ -147,6 +147,9 @@
 
   .header-title {
     width: 90vw;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: left;
   }
 
   .header .ais-SearchBox {
