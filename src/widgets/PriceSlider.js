@@ -129,7 +129,7 @@ const PriceSlider = ({ min, max, refine, currentRefinement, canRefine }) => {
                   left: `${percent}%`,
                 }}
               >
-                <span style={{ color: '#e2a400', marginRight: 4 }}>$</span>
+                <span style={{ color: '#a25fbf', marginRight: 4 }}>$</span>
                 {formatNumber(value)}
               </div>
             ))}

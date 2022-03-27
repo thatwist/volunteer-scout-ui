@@ -27,12 +27,12 @@ h2 {
 
 .header {
   align-items: center;
-  background: #E3B23C;
+  background: #a25fbf;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 325px;
+  min-height: 310px;
   padding: 0.5rem 1rem;
   text-align: center;
 }
@@ -48,7 +48,7 @@ h2 {
 
 .header-title {
   font-size: 38px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
 }
 
@@ -119,7 +119,7 @@ em {
 
 em,
 mark {
-  background: rgba(226, 164, 0, 0.4);
+  background: rgba(162, 95, 191, 0.4);
 }
 
 /* Clear refinements container */
@@ -188,7 +188,8 @@ mark {
 }
 
 .ais-SearchBox-submit {
-  color: #e2a400;
+  color: #a25fbf;
+  color: 
 }
 
 .ais-RefinementList .ais-SearchBox-input {
@@ -262,13 +263,13 @@ mark {
 }
 
 .hit-em {
-  color: #e2a400;
+  color: #a25fbf;
   font-size: 11px;
   font-weight: 600;
 }
 
 .hit-rating {
-  border: 1px solid rgba(226, 164, 0, 0.5);
+  border: 1px solid rgba(162, 95, 191, 0.5);
   border-radius: 4px;
   margin-left: 4px;
   padding: 0 4px;
@@ -328,7 +329,7 @@ mark {
 }
 
 .ais-ToggleRefinement-checkbox:checked::before {
-  color: #e2a400;
+  color: #a25fbf;
 }
 
 .ais-ToggleRefinement-checkbox::before {
@@ -371,7 +372,7 @@ mark {
 @media (max-width: 900px) {
   .header-title {
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: left;
   }
 }

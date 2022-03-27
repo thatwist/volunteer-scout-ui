@@ -233,6 +233,13 @@ const withURLSync = App =>
       });
 
     onSearchStateChange = searchState => {
+      const page = `?query=${searchState.query}`;
+      // window.ga('send', 'pageView', page);
+      window.gtag('event', 'page_view', {
+        /* eslint-disable camelcase */
+        page_path: page,
+      });
+
       clearTimeout(this.debouncedSetState);
 
       this.debouncedSetState = setTimeout(() => {

@@ -60,7 +60,7 @@ a[class^='ais-'] {
 
 .ais-Highlight-highlighted,
 .ais-Snippet-highlighted {
-  background: rgba(226, 164, 0, 0.4);
+  background: rgba(162, 95, 191, 0.4);
 }
 
 /* Hits */
@@ -108,7 +108,7 @@ a[class^='ais-'] {
 }
 
 .ais-RatingMenu-starIcon--full {
-  fill: #e2a400;
+  fill: #a25fbf;
 }
 
 .ais-RatingMenu-starIcon--empty {
@@ -271,7 +271,7 @@ a[class^='ais-'] {
 }
 
 .ais-RefinementList-item--selected .ais-RefinementList-checkbox, .ais-NumericMenu-item--selected .ais-NumericMenu-radio {
-  background-color: #e2a400;
+  background-color: #a25fbf;
 }
 
 .ais-RefinementList-item--selected .ais-RefinementList-checkbox::after, .ais-NumericMenu-item--selected .ais-NumericMenu-radio::after {
@@ -366,7 +366,7 @@ a[class^='ais-'] {
 }
 
 .ais-ToggleRefinement-checkbox:checked {
-  background: #e2a400;
+  background: #a25fbf;
 }
 
 .ais-ToggleRefinement-checkbox::after {
@@ -424,7 +424,7 @@ a[class^='ais-'] {
 }
 
 .ais-RangeSlider .rheostat-progress {
-  background-color: #e2a400;
+  background-color: #a25fbf;
   border-radius: 3px;
   height: 3px;
   top: 0;
@@ -499,7 +499,7 @@ a[class^='ais-'] {
 }
 
 .ais-Pagination-item--selected {
-  background-color: #e2a400;
+  background-color: #a25fbf;
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.34),
