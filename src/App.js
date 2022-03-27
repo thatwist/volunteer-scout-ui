@@ -260,7 +260,7 @@ const App = props => {
                               />
                             </g>
                           </svg>
-                          Скасувати
+                          Скинути все
                         </React.Fragment>
                       ),
                     }}
@@ -294,6 +294,7 @@ const App = props => {
                     limit={20}
                     showMore={true}
                     showMoreLimit={100}
+                    facetOrdering={false}
                     translations={{
                       placeholder: 'Пошук каналів…',
                       showMore(expanded) {
