@@ -95,11 +95,11 @@ const Hit = ({ hit }) => (
       {/* <h1>*/}
       {/*  <Highlight attribute="title" tagName="mark" hit={hit} />*/}
       {/* </h1>*/}
-      <p className="hit-description">
+      <div className="hit-description">
         <ShowMoreText lines={2} more="Читати далі" less="Згорнути">
           <Snippet attribute="description" tagName="mark" hit={hit} />
         </ShowMoreText>
-      </p>
+      </div>
 
       <footer>
         <p>

@@ -9,8 +9,8 @@ const NoResults = ({ searchResults }) => {
 
   const hasRefinements = searchResults.getRefinements().length > 0;
   const description = hasRefinements
-    ? 'Try to reset your applied filters.'
-    : 'Please try another query.';
+    ? 'Спробуйте скинути фільтри'
+    : 'Спробуйте інші слова';
 
   return (
     <div className="hits-empty-state">
@@ -90,9 +90,7 @@ const NoResults = ({ searchResults }) => {
         </g>
       </svg>
 
-      <p className="hits-empty-state-title">
-        Sorry, we can&apos;t find any matches to your query!
-      </p>
+      <p className="hits-empty-state-title">Не знайдено жодних співпадінь</p>
       <p className="hits-empty-state-description">{description}</p>
 
       <ClearRefinements
@@ -114,7 +112,7 @@ const NoResults = ({ searchResults }) => {
                   />
                 </g>
               </svg>
-              Clear filters
+              Скинути фільтри
             </div>
           ),
         }}

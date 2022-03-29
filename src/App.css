@@ -84,8 +84,8 @@ a:hover {
 
 .container-filters {
   flex: 1;
-  margin-right: 60px;
-  max-width: 260px;
+  margin-right: 20px;
+  width: 300px;
 }
 
 .container-header {
@@ -206,6 +206,13 @@ mark {
     Adding some padding top makes it more vertically aligned.
   */
   padding-top: 2px;
+}
+
+.ais-RefinementList-labelText {
+  display: block;
+  max-width: 230px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* Hits */
