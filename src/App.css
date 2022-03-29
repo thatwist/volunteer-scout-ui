@@ -260,6 +260,15 @@ mark {
   margin-top: 2px;
 }
 
+.hit-description a {
+  color: grey;
+  text-decoration: underline;
+}
+
+.hit-description a:hover {
+  text-decoration: none;
+}
+
 .hit-info-container {
   overflow-wrap: break-word;
   word-break: break-word;
