@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types, react/jsx-no-bind */
 import React, { useRef } from 'react';
+import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import {
   InstantSearch,
   /* HierarchicalMenu, */
@@ -34,8 +35,7 @@ import './Theme.css';
 import './App.css';
 import './App.mobile.css';
 import './widgets/Pagination.css';
-
-import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
+import Logo from './Logo';
 
 const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   server: {
@@ -71,9 +71,13 @@ const Hit = ({ hit }) => (
   <article className="hit">
     <header className="hit-header">
       {/* <img src={hit.image} alt={hit.title} className="hit-image" />*/}
-      {hit.author && <span className="hit-author">@{hit.author} пише у </span>}
-      <span className="hit-channel">{hit.channel_title}</span>
-      <span className="hit-date">{formatDate(hit.ts * 1000)}</span>
+      <div>
+        <div className="hit-date">{formatDate(hit.ts * 1000)}</div>
+        {hit.author && (
+          <span className="hit-author">@{hit.author} пише у </span>
+        )}
+        <span className="hit-channel">{hit.channel_title}</span>
+      </div>
       <a
         className="hit-external-link"
         href={hit.link}
@@ -177,7 +181,9 @@ const App = props => {
         >
           ↗ Залишити відгук
         </a>
-        <p className="header-logo"></p>
+        <div className="header-logo">
+          <Logo />
+        </div>
 
         <p className="header-title">
           Знаходимо речі, людей, допомогу

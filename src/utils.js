@@ -1,11 +1,12 @@
-import { format } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
+import ukLocale from 'date-fns/locale/uk';
 
 export function formatNumber(value) {
   return Number(value).toLocaleString();
 }
 
 export function formatDate(date) {
-  return format(date, 'dd.MM HH:mm');
+  return formatDistanceToNow(date, { addSuffix: true, locale: ukLocale });
 }
 
 export function getPlatformTitle(platform) {

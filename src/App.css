@@ -23,6 +23,10 @@ h2 {
   font-weight: bold;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* Header */
 
 .header {
@@ -37,8 +41,20 @@ h2 {
   text-align: center;
 }
 
+.left-feedback, .header-logo {
+  position: absolute;
+  top: 30px;
+}
+
+.left-feedback {
+  right: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
 .header-logo {
   margin: 0;
+  left: 20px;
 }
 
 .header-logo svg {
@@ -50,14 +66,6 @@ h2 {
   font-size: 38px;
   font-weight: 400;
   text-align: left;
-}
-
-.left-feedback {
-  position: absolute;
-  right: 20px;
-  top: 30px;
-  color: #fff;
-  text-decoration: none;
 }
 
 /* Containers */
@@ -189,7 +197,6 @@ mark {
 
 .ais-SearchBox-submit {
   color: #a25fbf;
-  color: 
 }
 
 .ais-RefinementList .ais-SearchBox-input {
@@ -224,12 +231,15 @@ mark {
 }
 
 .hit-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
   color: #ADADAC;
   font-size: 12px;
-  margin-bottom: 4px;
 }
 
 .hit-date {
+  color: #333;
   margin-right: 10px;
 }
 
@@ -244,8 +254,6 @@ mark {
   border-radius: 3px;
   color: grey;
   text-decoration: none;
-  border: 1px solid grey;
-  background-color: #efefef;
 }
 
 .hit-description {
