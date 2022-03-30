@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types, react/jsx-no-bind */
 import React, { useRef } from 'react';
-import ShowMoreText from 'react-show-more-text';
+// import ShowMoreText from 'react-show-more-text';
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import {
   InstantSearch,
@@ -96,9 +96,9 @@ const Hit = ({ hit }) => (
       {/*  <Highlight attribute="title" tagName="mark" hit={hit} />*/}
       {/* </h1>*/}
       <div className="hit-description">
-        <ShowMoreText lines={2} more="Читати далі" less="Згорнути">
-          <Snippet attribute="description" tagName="mark" hit={hit} />
-        </ShowMoreText>
+        {/* <ShowMoreText lines={2} more="Читати далі" less="Згорнути">*/}
+        <Snippet attribute="description" tagName="mark" hit={hit} />
+        {/* </ShowMoreText>*/}
       </div>
 
       <footer>
