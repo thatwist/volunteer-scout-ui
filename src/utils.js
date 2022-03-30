@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
-import ukLocale from 'date-fns/locale/uk';
+
+import ukLocale from './uk-locale-decorator';
 
 export function formatNumber(value) {
   return Number(value).toLocaleString();
