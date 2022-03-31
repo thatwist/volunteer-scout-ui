@@ -235,7 +235,7 @@ const withURLSync = App =>
     onSearchStateChange = searchState => {
       window.gtag({
         event: 'search',
-        'Search Query': searchState.query,
+        'Search Query': encodeURIComponent(searchState.query),
       });
 
       clearTimeout(this.debouncedSetState);
