@@ -233,10 +233,12 @@ const withURLSync = App =>
       });
 
     onSearchStateChange = searchState => {
-      gtag('event', 'search', {
-        'event_category': 'search',
-        'event_label': 'search',
-        'value': searchState.query
+      window.gtag('event', 'search', {
+        // eslint-disable-next-line camelcase
+        event_category: 'search',
+        // eslint-disable-next-line camelcase
+        event_label: 'search',
+        value: searchState.query,
       });
       // 'Search Query': encodeURIComponent(searchState.query),
 
